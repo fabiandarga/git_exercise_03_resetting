@@ -1,42 +1,39 @@
-# Übungsaufgabe: Rückgängig machen eines Commits mit git reset (soft, mixed und hard)
+# Exercise: Reverting a commit with git reset (soft, mixed, and hard)
 
-Durch diese Übung kannst du den Unterschied zwischen den verschiedenen Reset-Modi
-(`soft`, `mixed` und `hard`) kennenlernen und verstehen, wie sie sich auf
-die Commit-Historie, den Staging-Bereich und das Arbeitsverzeichnis auswirken.
+Through this exercise, you can learn the difference between the various reset modes (`soft`, `mixed` and `hard`)
+and understand how they affect the commit history, the staging area, and the working directory.
 
-## Schritt 1
-Initialisiere ein neues Git-Repository in einem leeren Verzeichnis.
-Verwende dazu den Befehl:
+## Step 1
 
+Initialize a new Git repository in an empty directory using the command:
 ```
 git init
 ```
 
-## Schritt 2
-Erstelle eine neue Textdatei mit einem Texteditor oder der Befehlszeile.
-Nenne die Datei `example.txt` und füge einen beliebigen Textinhalt hinzu.
+## Step 2
 
-## Schritt 3
-Füge die neue Textdatei dem Staging-Bereich hinzu und mache einen Commit.
-Verwende dazu die folgenden Befehle:
+Create a new text file using a text editor or the command line. Name the file `example.txt` and add any text content.
+
+## Step 3
+
+Add the new text file to the staging area and commit it using the following commands:
 
 ```
 git add example.txt
 git commit -m "example.txt hinzugefügt"
 ```
 
-## Schritt 4
-Lösche die Datei example.txt, füge die Änderung zur Stage hinzu und erstelle 
-einen neuen Commit mit der Nachricht "example.txt gelöscht".
-Prüfe mit `git status` das der Arbeitsbereich sauber ist.
+## Step 4
 
-## Schritt 5
-Führe den Befehl `git log` aus, um die Commit-Historie anzuzeigen und
-den SHA-1-Hash des ersten Commits zu kopieren.
+Delete the file example.txt, add the change to the stage, and create a new commit with the message "deleted example.txt". Check that the working directory is clean using `git status`.
 
-## Schritt 6
-Probiere nun nacheinander `git reset --soft`, `git reset --mixed`
-aus, um den Unterschied zu sehen:
+## Step 5
+
+Execute the command `git log` to display the commit history and copy the SHA-1 hash of the first commit.
+
+## Step 6
+
+Now, try `git reset --soft` and `git reset --mixed` one after the other to see the difference:
 
 ```
 git reset --soft <Commit-Hash>
@@ -45,11 +42,13 @@ git reset --soft <Commit-Hash>
 git reset --mixed <Commit-Hash>
 ```
 
-Überprüfe den Status deines Git-Repositories nach jedem Reset-Befehl und
-führe erneut Befehle zum stagen und commiten aus, damit wieder 2 Commits in der Historie sind.
+Check the status of your Git repository after each reset command and reissue commands to stage and commit so that there are 2 commits in the history again.
 
-## Schritt 7
-Benutze nun `git reset --hard` um das Löschen der Datei ganz rückgängig zu machen.
+## Step 7
+
+Now use `git reset --hard` to completely undo the deletion of the file.
+
 ```
 git reset --hard <Commit-Hash>
 ```
+
